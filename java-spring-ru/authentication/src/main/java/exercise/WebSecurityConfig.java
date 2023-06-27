@@ -25,7 +25,7 @@ public class WebSecurityConfig {
 
         http
                 .authorizeHttpRequests((requests) -> requests
-                        .requestMatchers("/", "/users").permitAll()
+                        .requestMatchers("/").permitAll()
                         .requestMatchers(HttpMethod.POST, "/users").permitAll()
                         .anyRequest().authenticated()
                 ).httpBasic();
