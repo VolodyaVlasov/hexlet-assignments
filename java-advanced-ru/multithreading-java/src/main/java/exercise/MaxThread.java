@@ -14,7 +14,7 @@ public class MaxThread extends Thread{
 
     @Override
     public void run() {
-        result = Arrays.stream(array).max().getAsInt();
+        result = Arrays.stream(array).max().orElseThrow(() -> new RuntimeException("array is empty"));
     }
 
     public int getResult() {

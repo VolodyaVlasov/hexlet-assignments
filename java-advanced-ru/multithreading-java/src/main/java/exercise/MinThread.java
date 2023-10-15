@@ -13,7 +13,7 @@ public class MinThread extends Thread {
 
     @Override
     public void run() {
-        result = Arrays.stream(array).min().getAsInt();
+        result = Arrays.stream(array).min().orElseThrow(() -> new RuntimeException("array is empty"));
     }
 
     public int getResult() {
